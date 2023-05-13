@@ -40,7 +40,12 @@ html , body , #root {
 
 .header__nav {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.header__nav a {
+  margin-right: 10px;
 }
 
 .header__nav p {
@@ -100,4 +105,5 @@ html , body , #root {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
 }
+
 
