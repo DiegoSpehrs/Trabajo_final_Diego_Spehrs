@@ -8,12 +8,12 @@ const NavBar = () => {
         <NavLink to="/">
         <h1 className="header__title">Mi tienda gaming</h1>
         </NavLink>
-        <nav className="header__nav">
+        <nav className="header__nav"> 
           <NavLink to="/category/1" className="NavBar__link">almacenamiento </NavLink>
           <NavLink to="/category/2" className="NavBar__link">monitores </NavLink>
           <NavLink to="/category/3" className="NavBar__link">perifericos  </NavLink>
           <NavLink to="/Cart" className="NavBar__link"><CartWidget/></NavLink>
-        </nav>
+          </nav>
       </header>
     )
   }
