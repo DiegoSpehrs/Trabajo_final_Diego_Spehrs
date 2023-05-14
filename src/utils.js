@@ -41,9 +41,35 @@ export const getProductsByCategory = () => {
         })    
 }
 
+/*
+export const getProductById = () => {
+    const productsCollection = collection(db, "products");
+    const filtroId = query(productsCollection, where)("id", "==", documento.id)
+    getDocs(filtroId)
+        .then((respuesta) => {
+            const array_de_documentos_id = respuesta.docs
+            const resultado = array_de_documentos_id.map((documento) => {
+                const id = documento.id
+                const data = documento.data()
+                data.id = id
+                return data
+            })
+            return resultado
+        })
+        .catch((error) => {
+            console.log(error)
+        
+        })
+
+}
+*/
+
+
+
+
 //esto es lo que el profe dejo como maqueta del guardado de las ventas en la db hay que meterle mano para que quede
 export const crearVenta = (venta) => {
-    console-log("creando una venta...")
+    console.log("creando una venta...")
     const ventasCollection = collection(db, "ventas")
         .then((respuesta) => {
           return respuesta.id  
