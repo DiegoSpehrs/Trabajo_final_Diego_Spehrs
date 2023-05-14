@@ -3,11 +3,8 @@ import ItemDetailContainer from "./components/ItemDetailConteiner/ItemDetailCont
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import NavBar from "./components/NavBar/NavBar"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Cart from "./pages/Cart";
+import Cart from "./components/Cart/Cart";
 import NotFound from "./pages/NotFound";
-
-
-
 
 
 const App = () => {
