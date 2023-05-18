@@ -22,9 +22,9 @@ export const getProducts = () => {
         })
 }
 
-export const getProductsByCategory = () => {
+export const getProductsByCategory = (category) => {
     const productsCollection = collection(db, "products");
-    const filtro = query(productsCollection, where)("category", "==", "almacenamiento")
+    const filtro = query(productsCollection, where)("category", "==", category)
     getDocs(filtro)
         .then((respuesta)=> {
             const array_de_documentos = respuesta.docs
@@ -42,10 +42,10 @@ export const getProductsByCategory = () => {
 }
 
 /*
-export const getProductById = () => {
+export const getProductById = (id) => {
     const productsCollection = collection(db, "products");
-    const filtroId = query(productsCollection, where)("id", "==", documento.id)
-    getDocs(filtroId)
+    const filtroId = query(productsCollection, where("id", "==", id))
+    return getDocs(filtroId)
         .then((respuesta) => {
             const array_de_documentos_id = respuesta.docs
             const resultado = array_de_documentos_id.map((documento) => {
@@ -58,13 +58,12 @@ export const getProductById = () => {
         })
         .catch((error) => {
             console.log(error)
-        
         })
 
 }
+
+console.log(getProductById())
 */
-
-
 
 
 //esto es lo que el profe dejo como maqueta del guardado de las ventas en la db hay que meterle mano para que quede
