@@ -1,7 +1,6 @@
 import Footer from "./components/Footer/Footer";
 import ItemDetailContainer from "./components/ItemDetailConteiner/ItemDetailConteiner";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import CategoryItemListContainer from "./pages/page1";
 import NavBar from "./components/NavBar/NavBar"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Cart from "./components/Cart/Cart";
