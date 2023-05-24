@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import ItemCount from "../ItemCount/ItemCount"
+import {CartProvider, Context} from "../CartContext/CartContext"
 
 
 const ItemDetail = ({id , title, img , category, description, price, stock}) => {
-
+  const [quantityAdded, setQuantityAdded] = useState(0)
   
+  const {addItem} = useContext(Context) 
+
+  /*console.log(product)*/
+
+  const handelOnAdd = (quantity) => {
+      setQuantityAdded(quantity)
+
+      const item = {
+          id, title, price
+      }
+
+      addItem(item, quantity)
+  }
   return (
     <article className="CardItem">
       <header className="Header">
@@ -28,7 +42,13 @@ const ItemDetail = ({id , title, img , category, description, price, stock}) => 
         </p> 
         </section>
         <footer className="ItemFooter">
-            <ItemCount initial={1} stock={stock} onAdd={(quantity) => console.log("Cantidad agregada", quantity)}/>
+          {
+            quantityAdded > 0 ? (
+              <link to="/cart">terminar compra</link>
+            ) : (
+              <ItemCount initial={1} stock={stock} onAdd={handelOnAdd}/>
+            )
+          }
         </footer>
       </article>        
   )

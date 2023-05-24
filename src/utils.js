@@ -41,10 +41,9 @@ export const getProductsByCategory = (category) => {
         })    
 }
 
-
-export const getProductById = (id) => {
+export const getProductById = (productId) => {
     const productsCollection = collection(db, "products");
-    const filtroId = query(productsCollection, where("id", "==", id))
+    const filtroId = query(productsCollection, where("id", "==", productId))
     return getDocs(filtroId)
         .then((respuesta) => {
             const array_de_documentos_id = respuesta.docs
@@ -62,7 +61,7 @@ export const getProductById = (id) => {
 
 }
 
-console.log(getProductById())
+
 
 
 
