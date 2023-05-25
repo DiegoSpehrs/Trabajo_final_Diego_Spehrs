@@ -1,24 +1,24 @@
 import React, { useContext, useState } from 'react'
 import ItemCount from "../ItemCount/ItemCount"
-import {CartProvider, Context} from "../CartContext/CartContext"
+import {Context} from "../CartContext/CartContext"
+import { Link } from 'react-router-dom'
+
 
 
 const ItemDetail = ({id , title, img , category, description, price, stock}) => {
   const [quantityAdded, setQuantityAdded] = useState(0)
   
-  const {addItem} = useContext(Context) 
-
-  /*console.log(product)*/
+  const {addToCart} = useContext(Context) 
 
   const handelOnAdd = (quantity) => {
       setQuantityAdded(quantity)
 
       const item = {
-          id, title, price
+          id, title, price, img
       }
 
-      addItem(item, quantity)
-  }
+      addToCart(item, quantity)
+  } 
   return (
     <article className="CardItem">
       <header className="Header">
@@ -44,7 +44,7 @@ const ItemDetail = ({id , title, img , category, description, price, stock}) => 
         <footer className="ItemFooter">
           {
             quantityAdded > 0 ? (
-              <link to="/cart">terminar compra</link>
+              <Link to="/cart">terminar compra</Link>
             ) : (
               <ItemCount initial={1} stock={stock} onAdd={handelOnAdd}/>
             )

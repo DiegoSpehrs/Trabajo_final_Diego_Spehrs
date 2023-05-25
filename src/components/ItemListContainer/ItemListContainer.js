@@ -7,16 +7,17 @@ import { db } from '../../firebase.js';
 
 const ItemListContainer = () => {
    const [product , setProduct] = useState([])
-   const [loading , setLoading] = useState(true)
-
-   const {categoryId} = useParams()
+  
+   const {id} = useParams()
 
    
 
    useEffect(() => {
-        setLoading(true)
-
-    const collectionRef = categoryId ? query(collection(db, 'products'), where('category', '==' , categoryId)) : collection(db, 'products')
+        
+    
+    const collectionRef = id 
+        ? query(collection(db, 'products'), where('category', '==' , id)) 
+        : collection(db, 'products')
 
     getDocs(collectionRef)
        .then(response => {
@@ -29,11 +30,9 @@ const ItemListContainer = () => {
        })
        .catch(error => {
            console.log(error)
-       }) 
-       .finally(() => {
-            setLoading(false)
        })
-   })
+       
+   },[id])
 
 
 
@@ -42,6 +41,7 @@ const ItemListContainer = () => {
         <div>
             <ItemList products={product}/>
         </div>
+       
     )
 }    
 

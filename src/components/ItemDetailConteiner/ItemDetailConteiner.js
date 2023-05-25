@@ -5,10 +5,11 @@ import { useParams  } from 'react-router-dom'
 
 
 
+
 const ItemDetailConteiner = () => {
   const [product, setProduct] = useState({})
    const { id } = useParams()
-/* 
+
    useEffect(() => {
       getProductById(id)
         .then(Response => setProduct(Response))
@@ -17,7 +18,7 @@ const ItemDetailConteiner = () => {
         
    }, [id])
   
-  */ 
+  
    
   return (
     <div className="ItemDetailConteiner">

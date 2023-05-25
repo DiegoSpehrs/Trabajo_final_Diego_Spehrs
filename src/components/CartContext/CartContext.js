@@ -31,12 +31,35 @@ export const CartProvider = ({children}) => {
         return cart.some(prod => prod.id === productId)
     } 
 
+    const calcularTotal  = (cart) => {
+        const resultadoReduce = cart.reduce((total, item) => total + item.quantity, 0);
+        return resultadoReduce;
+    }
+
+    function getTotalPrice(cart) {
+        let total = 0;
+        for (let item of cart) {
+          if (item.product && typeof item.product.price === 'number' && typeof item.quantity === 'number') {
+            total += item.product.price * item.quantity;
+          }
+        }
+        return total;
+      }
+      
+      
+      
+
+    
     const ValorDelContexto = {
         Cart : [],
         addToCart : addToCart,
         removeItem : removeItem,
         clearCart : clearCart,
+        totalQuantity : calcularTotal(cart),
+        total: getTotalPrice(cart)
     }
+
+   
 
     return (
     <Provider value={ValorDelContexto}>
