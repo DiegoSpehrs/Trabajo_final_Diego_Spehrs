@@ -1,5 +1,5 @@
 import { db } from "./firebase";
-import { addDoc, collection, getDocs, query, where  } from "firebase/firestore";
+import { addDoc, collection, getDocs, query, where, doc  } from "firebase/firestore";
 
 
 
@@ -42,10 +42,9 @@ export const getProductsByCategory = (category) => {
 }
 
 export const getProductById = (productId) => {
-    const productsCollection = collection(db, "products");
-    const filtroId = query(productsCollection, where("id", "==", productId))
-    return getDocs(filtroId)
-        .then((respuesta) => {
+    const docRef = doc(db,'products', productId)
+    const query = getDocs(docRef)
+    query.then((respuesta) => {
             const array_de_documentos_id = respuesta.docs
             const resultado = array_de_documentos_id.map((documento) => {
                 const id = documento.id
@@ -58,9 +57,8 @@ export const getProductById = (productId) => {
         .catch((error) => {
             console.log(error)
         })
-
+        console.log(productId)
 }
-
 
 
 
