@@ -1,5 +1,5 @@
 import { db } from "./firebase";
-import { addDoc, collection, getDocs, query, where, doc, getDoc  } from "firebase/firestore";
+import {collection, getDocs, query, where, doc, getDoc  } from "firebase/firestore";
 
 
 
@@ -7,7 +7,6 @@ export const getProducts = () => {
     const productsCollection = collection(db, "products");
     return getDocs(productsCollection)
         .then((respuesta)=> {
-          //preguntar si se puede achicar estas 2 lineas en 1 sola encadenando el map directamente al respuesta.docs
             const array_de_documentos = respuesta.docs
             const resultado = array_de_documentos.map((documento) => {
                 const id = documento.id
@@ -71,16 +70,22 @@ export const getProductById = (productId) => {
 
 
 
+export function enviarVentaAFirebase(venta) {
+    return db.collection('ventas')
+      .add(venta)
+      .then((docRef) => {
+        console.log('La venta se ha enviado correctamente a Firebase');
+        return docRef.id;
+      })
+      .catch((error) => {
+        console.error('Error al enviar la venta a Firebase:', error);
+        return null;
+      });
+  }
 
-//esto es lo que el profe dejo como maqueta del guardado de las ventas en la db hay que meterle mano para que quede
-export const crearVenta = (venta) => {
-    console.log("creando una venta...")
-    const ventasCollection = collection(db, "ventas")
-        .then((respuesta) => {
-          return respuesta.id  
-        })
-        .catch((error) => {
-            console.log(error)
-        })
-}
+
+
+
+
+
 

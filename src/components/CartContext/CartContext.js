@@ -7,10 +7,11 @@ const {Provider} = Context
 export const CartProvider = ({children}) => {
     const [cart, setCart] = useState([]);
     
-    console.log(cart)
+   
     
     const addToCart = (product, quantity) => {
        if(!isInCart(product.id)) {
+          console.log(product)
          setCart(prev => [...prev, {product, quantity}])
        } else {
         console.log("ya esta en el carrito")
@@ -45,11 +46,7 @@ export const CartProvider = ({children}) => {
         }
         return total;
       }
-      
-      
-      
 
-    
     const ValorDelContexto = {
         cart : cart,
         addToCart : addToCart,

@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Mi tienda gaming
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripción
 
-## Available Scripts
+Este proyecto es un E-COMERCE muy basico en el cual se muestra una landing page que renderiza todos los productos de la tienda, cuenta con 3 categorias de filtrado: "almacenamiento", "monitores", "perifericos", los cuales renderizan los productos segun su categoria.
+tiene una funcion de ver detalle el cual te genera una vista en la cual se puede ver el detalle mas en profundidad del item puntual.
+tambien cuenta con un sistema de carrito al cual se puede agregar items desde el detalle del producto y el cual calcula un precio total de todo el carrito y renderiza un detalle de cada producto que lo integra.
+en el carrito tenemos 3 botones: un boton par eliminar el producto puntal del carrito, otro el cual limpia todo el carrito y el ultimo que finaliza la compra, mandando la compra a una base de datos echa en firestore y muestra un mensaje final de agradecimiento de la compra y visualiza el id de la compra como referencia.
 
-In the project directory, you can run:
 
-### `npm start`
+## Tecnologías y librerías
+Este proyecto fue desarrollado utilizando las siguientes tecnologías y librerías:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React.js
+- JavaScript
+- HTML
+- CSS
+- Firebase 
+- react
+- react-dom
+- react-router-dom
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instalación y ejecución
 
-### `npm test`
+Para correr este proyecto en tu computadora, sigue los siguientes pasos:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clona este repositorio en tu máquina local desde https://github.com/DiegoSpehrs/Trabajo_final_Diego_Spehrs.
+2. Abre tu terminal y navega hasta la carpeta del proyecto.
+3. Instala las dependencias utilizando el comando: `npm install`
+4. Inicia el servidor de desarrollo con el comando: `npm start`
 
-### `npm run build`
+Una vez hecho esto, podrás visualizar el proyecto en tu navegador web en la dirección: http://localhost:3000/.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## gif de demostracion
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![texto alternativo](https://drive.google.com/file/d/1ccrKuC1aPDVJVOUNvOq_Sac4bVHUp_Wm/view?usp=share_link)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
