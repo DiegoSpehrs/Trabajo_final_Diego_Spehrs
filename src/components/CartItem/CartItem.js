@@ -1,30 +1,20 @@
 import React from 'react'
-import { Context } from '../CartContext/CartContext'
+import { Context,} from '../CartContext/CartContext'
 import { useContext } from 'react'
 
-const CartItem = (p) => {
-  const {img, title, quantity, price} = useContext(Context)
-  
-    return (
-        <article>
-            <header>
-                <h2>
-                 {title}
-                </h2>
-            </header>
-            <picture>
-                <img src={img} alt={title}/>
-            </picture>
-            <section>
-                <p>
-                    Precio: ${price}
-                </p>
-                <p>
-                    Cantidad: {quantity}
-                </p>
-            </section>
-        </article>
 
+const CartItem = (p) => {
+  const {title, quantity, price} = useContext(Context)
+    console.log(title, quantity, price)
+    console.log(p)
+    return (
+        
+        <tr>
+            <td>{title}</td>
+            <td>x{quantity}</td>
+            <td>${price}</td>
+        </tr>
+        
   )
 }
 

@@ -14,7 +14,7 @@ const ItemDetail = ({id , title, img , category, description, price, stock}) => 
       setQuantityAdded(quantity)
 
       const item = {
-          id, title, price, img
+          id, title, price,
       }
 
       addToCart(item, quantity)

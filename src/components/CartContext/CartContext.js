@@ -51,7 +51,7 @@ export const CartProvider = ({children}) => {
 
     
     const ValorDelContexto = {
-        Cart : [],
+        cart : cart,
         addToCart : addToCart,
         removeItem : removeItem,
         clearCart : clearCart,
