@@ -40,6 +40,7 @@ const Cart = () => {
      
     else{ 
         return (
+           <>
            <div>
                 <ul>
                     {cart.map((items, index) => (
@@ -61,6 +62,7 @@ const Cart = () => {
                 <button onClick={clearCart}>Vaciar Carrito</button>
                 <button onClick={handleClickEnviarVenta}>Comprar</button>
             </div>
+            </>
         )
         
     }  
